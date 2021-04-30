@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Vidazoo</title>
+</head>
+<body>
+    <script src="https://static.vidazoo.com/basev/vptm.js"></script>
+
+    <div id="some-id" style="width:500px;height:500px"></div>
+
+
+    <script type="text/javascript">
+        let settings = {
+            userId: "57b1cfb0f39a2d1100d8969c",
+            playerId: "5b228165ded76a0004ad5a55",
+            auto: false,
+            el: "#some-id",
+        }
+
+        vdz.create(settings, function (err, player) {
+
+            if (err) {
+                console.log(err)
+            }
+
+            player.on("paused",() => {console.log("Player Paused")})
+
+            setTimeout(() => {player.init()}, 60000)
+        });
+    </script>
+</body>
+</html>
